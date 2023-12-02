@@ -38,7 +38,7 @@ def create_student_view(test, num_questions):
                 student_view[qstn_num]= ''
     return student_view
 
-    def extract_answers(test, num_questions):
+def extract_answers(test, num_questions):
         answers = {1: ''}
         ans_num =1
         for line in test.split('\n'):
@@ -88,4 +88,4 @@ response = openai.Completion.create(
 print(handle_response(response))
 ##parse questions and answers
 student_view = create_student_view(handle_response(response), NUM_QSTNS)
-answers = extract_answer(handle_response(response), NUM_QSTNS)
+answers = extract_answers(handle_response(response), NUM_QSTNS)
